@@ -3,7 +3,8 @@ import pandas as pd
 
 away_team=pd.read_csv("merged_away_team_data.csv")
 home_team=pd.read_csv("merged_home_team_data.csv")
-all_players=pd.concat([away_team["height"],home_team["height"]],axis=0)
+away_team_mean = away_team.mean()
+home_team_mean = home_team.mean()
 
-print(all_players.dropna().unique().mean())
+height_mean = (away_team_mean + home_team_mean )/2
     
